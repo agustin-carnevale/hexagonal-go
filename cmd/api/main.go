@@ -12,17 +12,17 @@ import (
 // entry point
 func main() {
 	// Driven adapter: memory repo
-	repo := memory.New()
+	memoryRepository := memory.New()
 
 	// Usecase: core app logic
-	userService := usecases.NewUserService(repo)
+	userService := usecases.NewUserService(memoryRepository)
 
 	// Driver adapter: HTTP layer
-	handler := http_adapter.NewHandler(userService)
+	httpHandler := http_adapter.NewHandler(userService)
 
 	// HTTP server
 	mux := http.NewServeMux()
-	handler.RegisterRoutes(mux)
+	httpHandler.RegisterRoutes(mux)
 
 	log.Println("🚀 Server running on http://localhost:8081")
 	log.Fatal(http.ListenAndServe(":8081", mux))

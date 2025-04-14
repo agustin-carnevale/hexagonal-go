@@ -1,6 +1,6 @@
 # Hexagonal Architecture
 
-This repo is just some example code/boilerplate in Go to have handy and understand the basics of the hexagonal architecture structure.
+This repo is just a code example/boilerplate in Go to have handy and understand the basics of the hexagonal architecture structure.
 
 ![hexagonal architecture diagram](hexagonal.png)
 
